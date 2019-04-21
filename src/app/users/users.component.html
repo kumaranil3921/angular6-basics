@@ -1,0 +1,10 @@
+<h2>Users Component</h2>
+<input type="text" [(ngModel)]="userName" class="form-control">
+<button class="btn btn-primary" [disabled]="!isAddUser" (click)="onAddUser()">Add User</button>
+
+<p *ngIf="users?.length; else noUsers">User created with {{userName}} username</p>
+<ng-template #noUsers>
+  <p>No Users added</p>
+</ng-template>
+<app-user *ngFor="let user of users">{{user}}</app-user>
+<!-- <app-user></app-user> -->
